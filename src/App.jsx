@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <h1 className="text-[#1ed760] text-6xl font-bold -translate-y-5">Spotify</h1>
+      <h1 className="text-[#1ed760] text-6xl font-bold -translate-y-5">Swiperfy</h1>
       <swiper-container
         ref={swiperRef}
         init="false"
