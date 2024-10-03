@@ -32,3 +32,6 @@ swiper-container {
   right: 20px;
 }
 
+.loading {
+  @apply animate-pulse bg-slate-400
+}

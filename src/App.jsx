@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { data } from './data'
 import { useSwiper } from './hooks/useSwiper'
+import clsx from 'clsx'
 
 function App() {
   const [swiperRef] = useSwiper()
@@ -18,10 +20,9 @@ function App() {
               id="container"
             >
               {/* Thumbnail */}
-              <img
-                src={item.url}
+              <ImageComponent
+                url={item.url}
                 alt={item.name}
-                className="size-full object-cover rounded-md"
               />
 
               {/* Description */}
@@ -96,5 +97,21 @@ export const Play = () => {
     >
       <path d="M96 52v408l320-204L96 52z"></path>
     </svg>
+  )
+}
+
+// eslint-disable-next-line react/prop-types
+export function ImageComponent({ url, alt }) {
+  const [isLoading, setIsLoading] = useState(true)
+
+  return (
+    <picture className={clsx('size-full block', isLoading && 'loading')}>
+      <img
+        src={url}
+        alt={alt}
+        onLoad={() => setIsLoading(false)}
+        className="rounded-md size-full object-cover"
+      />
+    </picture>
   )
 }
