@@ -35,9 +35,25 @@ export const useSwiper = () => {
 
       direction: 'horizontal',
       loop: true,
-      slidesPerView: 5,
+      slidesPerView: 2,
       speed: 2000,
       spaceBetween: 30,
+      breakpoints: {
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 3,
+        },
+
+        // when window width is >= 800px
+        800: {
+          slidesPerView: 4,
+        },
+
+        // when window width is >= 1024px
+        1024: {
+          slidesPerView: 5,
+        },
+      },
     }
 
     // Assign it to swiper element

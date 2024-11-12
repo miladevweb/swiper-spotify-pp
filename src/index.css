@@ -17,6 +17,7 @@ body {
   display: grid;
   place-items: center;
   background-color: #121212;
+  overflow: clip;
 }
 swiper-container {
   width: 1200px;
@@ -33,5 +34,12 @@ swiper-container {
 }
 
 .loading {
-  @apply animate-pulse bg-slate-400
+  @apply animate-pulse bg-slate-400;
+}
+
+@media (width <= 1024px) {
+  swiper-container {
+    width: 100vw;
+    height: 300px;
+  }
 }

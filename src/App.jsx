@@ -7,7 +7,7 @@ function App() {
   const [swiperRef] = useSwiper()
 
   return (
-    <>
+    <main className='size-full '>
       <h1 className="text-[#1ed760] text-6xl font-bold -translate-y-5">Swiperfy</h1>
       <swiper-container
         ref={swiperRef}
@@ -52,7 +52,7 @@ function App() {
           <Next />
         </next-el>
       </div> */}
-    </>
+    </main>
   )
 }
 
